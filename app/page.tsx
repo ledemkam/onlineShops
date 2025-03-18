@@ -8,10 +8,10 @@ export default function page() {
         <div className="mx-auto grid grid-cols-1 items-center justify-items-center gap-8 px-8 sm:px-16 md:grid-cols-2">
           <div className="max-w-md space-y-4">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Welcome to My Ecommerce
+            Willkommen bei Design Shop
             </h2>
             <p className="text-neutral-600">
-              Discover the latest products at the best prices.
+            Entdecken Sie die neusten Produkte zu den besten Preisen.
             </p>
             <Button
               asChild
@@ -22,7 +22,7 @@ export default function page() {
                 href="/products"
                 className="inline-flex items-center justify-center rounded-full px-6 py-3"
               >
-                Browse All Products
+               Alle Produkte durchsuchen
               </Link>
             </Button>
           </div>
