@@ -1,3 +1,4 @@
+import Carousel from '@/components/shared/Carousel';
 import { Button } from '@/components/ui/button';
 import { stripe } from '@/lib/stripe';
 import Image from 'next/image';
@@ -43,7 +44,9 @@ export default async function Home() {
           /> 
         </div>
       </section>
-      <section className="py-8"></section>
+      <section className="py-8">
+        <Carousel products={products.data} />
+      </section>
     </div>
   );
 }
