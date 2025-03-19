@@ -1,17 +1,25 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Button } from '@/components/ui/button';
+import { stripe } from '@/lib/stripe';
+import Image from 'next/image';
+import Link from 'next/link';
 
-export default function page() {
+export default async function Home() {
+  const products = await stripe.products.list({
+    expand: ['data.default_price'],
+    limit: 5,
+  });
+  console.log(products);
+  
   return (
     <div>
       <section className="rounded bg-neutral-100 py-8 sm:py-12">
         <div className="mx-auto grid grid-cols-1 items-center justify-items-center gap-8 px-8 sm:px-16 md:grid-cols-2">
           <div className="max-w-md space-y-4">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Willkommen bei Design Shop
+              Willkommen bei Design Shop
             </h2>
             <p className="text-neutral-600">
-            Entdecken Sie die neusten Produkte zu den besten Preisen.
+              Entdecken Sie die neusten Produkte zu den besten Preisen.
             </p>
             <Button
               asChild
@@ -22,21 +30,20 @@ export default function page() {
                 href="/products"
                 className="inline-flex items-center justify-center rounded-full px-6 py-3"
               >
-               Alle Produkte durchsuchen
+                Alle Produkte durchsuchen
               </Link>
             </Button>
           </div>
-          {/* <Image
+          <Image
             alt="Hero Image"
             src={products.data[0].images[0]}
             className="rounded"
             width={450}
             height={450}
-          /> */}
+          /> 
         </div>
       </section>
-      <section className="py-8">
-      </section>
+      <section className="py-8"></section>
     </div>
-  )
+  );
 }
