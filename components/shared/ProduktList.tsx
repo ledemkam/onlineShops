@@ -22,7 +22,7 @@ const ProduktList = ({ products }: Props) => {
 });
 
   return (
-    <div>
+    <div className="mt-4">
       <div className="mb-6 flex justify-center">
         <input
           type="text"

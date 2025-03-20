@@ -12,7 +12,7 @@ export default async function ProductsPage() {
 
   return (
     <div className="pb-4">
-       <h1>Alle Produkten</h1>
+       <h1 className="mt-4">Alle Produkten</h1>
         <ProduktList products={products.data} />
     </div>
   )
